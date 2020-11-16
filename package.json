@@ -9,7 +9,7 @@
     "test:e2e:headless": "vue-cli-service test:e2e --headless",
     "test:unit": "vue-cli-service test:unit",
     "prettier:format-all": "prettier --write \"**/*.{vue,scss,sass,js,json}\"",
-    "prettier:check": "prettier --check \"**/*.{vue,scss,sass,js,json}\" --list-different",
+    "prettier:check": "prettier --check \"**/*.{vue,scss,sass,js,json}\"",
     "firebase:deploy:ci": "firebase deploy --non-interactive --token $FIREBASE_TOKEN",
     "bundlesize": "bundlesize"
   },
