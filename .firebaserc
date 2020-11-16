@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "bento-starter",
+    "default": "frat-bento",
     "staging": "frat-bento"
   }
 }
