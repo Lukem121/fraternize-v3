@@ -1,7 +1,12 @@
 <template>
   <div id="app">
-    <nav-bar></nav-bar>
-    <div class="main-wrapper">
+    <div v-if="['home', 'login', 'signup'].indexOf($route.name) == -1">
+      <nav-bar></nav-bar>
+      <div class="main-wrapper">
+        <router-view />
+      </div>
+    </div>
+    <div v-else>
       <router-view />
     </div>
 
@@ -39,8 +44,10 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/theme/variables.scss';
 body {
   margin: 0;
+  background: $dark-color;
 
   a {
     font-weight: 500;
@@ -48,8 +55,9 @@ body {
   }
 
   #app {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+      Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+      sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 16px;
