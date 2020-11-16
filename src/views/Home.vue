@@ -1,15 +1,12 @@
 <template>
   <div class="page-wrapper">
     <h1 class="home-page-title">{{ appTitle }}</h1>
-    <img alt="logo-bento" class="logo" src="@/assets/img/bento-starter.svg" />
-
-    <a
-      rel="noopener"
-      class="documentation-link"
-      target="_blank"
-      href="https://bento-starter.netlify.com/"
-      >Documentation →</a
-    >
+    <img
+      alt="logo-bento"
+      class="logo"
+      src="@/assets/img/fraternize-mascot.svg"
+    />
+    <img alt="logo-fraternize" class="logo" src="@/assets/img/logo-text.png" />
   </div>
 </template>
 
@@ -45,25 +42,12 @@ export default {
   align-items: center;
 
   .logo {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    width: 20rem;
   }
 
   .home-page-title {
     text-align: center;
-  }
-
-  .documentation-link {
-    display: inline-block;
-    font-size: 1.2rem;
-    color: #fff;
-    background-color: #5d6788;
-    padding: 0.8rem 1.6rem;
-    border-radius: 4px;
-    transition: background-color 0.1s ease;
-    box-sizing: border-box;
-    text-decoration: none;
-    width: fit-content;
-    font-weight: 500;
   }
 }
 </style>
