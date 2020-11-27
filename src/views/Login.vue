@@ -1,16 +1,23 @@
 <template>
   <div class="page-wrapper">
-    <h1 class="login-page-title">Login page</h1>
-
-    <!-- Loader -->
-    <div v-show="user === undefined" data-test="loader">Authenticating...</div>
-
+    <!-- <h1 class="home-page-title">{{ appTitle }}</h1> -->
     <!-- Offline instruction -->
     <div v-show="!networkOnLine" data-test="offline-instruction">
       Please check your connection, login feature is not available offline.
     </div>
 
-    <p v-if="loginError">{{ loginError }}</p>
+    <div class="logos">
+      <img
+        alt="logo-bento"
+        class="mascot"
+        src="@/assets/img/fraternize-mascot.svg"
+      />
+      <img
+        alt="logo-fraternize"
+        class="text"
+        src="@/assets/img/logo-text.png"
+      />
+    </div>
     <!-- Auth UI -->
     <div
       v-show="user !== undefined && !user && networkOnLine"
@@ -18,8 +25,12 @@
       class="login-btn"
       @click="login"
     >
-      Login with google
+      Sign in with Google
     </div>
+    <!-- Show login errors -->
+    <p v-if="loginError">{{ loginError }}</p>
+    <!-- Loader -->
+    <div v-show="user === undefined" data-test="loader">Authenticating...</div>
   </div>
 </template>
 
@@ -91,27 +102,38 @@ export default {
 
 .page-wrapper {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  height: 100vh;
+  background-position: left;
+  background-size: cover;
+  background-image: url('../assets/img/home-bg.jpg');
 
-  .login-page-title {
+  .logos {
+    width: 20rem;
+    .mascot {
+      border: green 2px;
+    }
+    .text {
+      margin-top: -30px;
+      width: 20rem;
+    }
+  }
+  .home-page-title {
     text-align: center;
   }
-
   .login-btn {
-    margin-top: 20px;
-    cursor: pointer;
-    padding: 5px 20px;
-    border: 1px solid;
-    display: inline-block;
-    border-radius: 3px;
-    border-color: #2c3e50;
-
-    &:hover {
-      color: $vue-color;
-      border-color: $vue-color;
-    }
+    background-color: $vue-color;
+    color: $dark-color;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    text-align: center;
+    width: 70%;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 20%;
   }
 }
 </style>
